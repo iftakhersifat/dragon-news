@@ -7,9 +7,12 @@ const Navbar = () => {
             <div></div>
             <div>
                 <nav className="space-x-4">
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/about">About</NavLink>
-                    <NavLink to="/career">Career</NavLink>
+                    <NavLink className={({isActive})=>isActive ? "text-blue-500 underline" : "text-gray-500"} 
+                    to="/">Home</NavLink>
+                    <NavLink className={({isActive})=>isActive ? "text-blue-500 underline" : "text-gray-500"} 
+                    to="/about">About</NavLink>
+                    <NavLink className={({isActive})=>isActive ? "text-blue-500 underline" : "text-gray-500"}
+                    to="/career">Career</NavLink>
                 </nav>
             </div>
 
