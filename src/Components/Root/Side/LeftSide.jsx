@@ -1,9 +1,25 @@
-import React from 'react';
-import { NavLink, useLoaderData } from 'react-router';
+import React, { Suspense, useEffect, useState } from 'react';
+import { NavLink } from 'react-router';
 
 const LeftSide = () => {
-    const categories = useLoaderData()
-    console.log(categories)
+
+    const [categories, setCategories] =useState(null) // state to hold data
+    const [loading, setLoading] = useState(true); // state to show loading
+
+    useEffect(()=>{
+        fetch("/categories.json")
+        .then(res=>res.json())
+        .then(json=>{
+            setCategories(json);
+            setLoading(false);
+        })
+    }, [])
+
+    if(loading){
+        return <span className="loading loading-infinity loading-xl"></span>
+    }
+
+
     return (
         <div>
             <h1 className='text-xl font-bold mb-4'>All Category</h1>

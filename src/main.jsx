@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     Component: Root,
     children: [
       {index: true,
-        loader: ()=>fetch("/categories.json"),
+        // loader: ()=>fetch("/categories.json"),
        Component: Home}
     ]
   },
