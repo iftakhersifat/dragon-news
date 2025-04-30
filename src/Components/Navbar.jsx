@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React from 'react';
 
 const Navbar = () => {
@@ -8,7 +9,9 @@ const Navbar = () => {
             </div>
             <div className='text-center space-y-2'>
                 <p className='text-gray-500 font-semibold text-xl'>Journalism Without Fear or Favour</p>
-                <p className='text-gray-500'>Sunday, November 27, 2025</p>
+                
+                {/* date-fns */}
+                <p className='text-gray-500'>{format(new Date(), "EEEE, MMMM, yyyy")}</p>
             </div>
         </div>
     );
