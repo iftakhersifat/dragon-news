@@ -1,5 +1,6 @@
 import React from 'react';
 import { format } from 'date-fns';
+import Marquee from 'react-fast-marquee';
 const Header = () => {
     return (
         <div className='container mx-auto'>
@@ -17,9 +18,9 @@ const Header = () => {
 
         <div className='flex items-center gap-4 mt-10 bg-[#F3F3F3] p-4'>
             <h1 className='btn bg-[#D72050] text-white'>Latest</h1>
-        <marquee>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti reprehenderit vitae earum.</p>
-        </marquee>
+        <Marquee pauseOnHover={true} speed={60}>
+            <p>The GroundTruth Project announces reorganization to more deeply focus on flagship programming</p>
+        </Marquee>
         </div>
 
         </div>

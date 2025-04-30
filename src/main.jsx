@@ -8,6 +8,8 @@ import {
 } from "react-router";
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Home.jsx';
+import Center from './Components/Root/Side/Center.jsx';
+import NotFound from './Components/NotFound/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +18,17 @@ const router = createBrowserRouter([
     children: [
       {index: true,
         // loader: ()=>fetch("/categories.json"),
-       Component: Home}
+       Component: Home},
+       {
+        path: "leftSide/:id",
+        Component: Center
+       },
     ]
+    
+  },
+  {
+    path: "*",
+    Component: NotFound
   },
 ]);
 
