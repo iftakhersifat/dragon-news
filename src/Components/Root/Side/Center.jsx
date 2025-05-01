@@ -15,16 +15,22 @@ const Center = () => {
             setIsLoading(false)
         })
 
+        
+
     }, []);
+    
 
     if(isLoading){
         return <span className="loading loading-infinity loading-xl"></span>
     }
 
-    console.log(data)
+    const filterNews = data.filter(news=> news.category_id == id);
+        console.log(filterNews);
+
+    // console.log(data)
     return (
         <div>
-            <h1>midPoint - {id}</h1>
+            <h1>News - {id}</h1>
         </div>
     );
 };
