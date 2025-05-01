@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 const Center = () => {
-    const {id} = useParams()
+    const {id} = useParams();
+
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(()=>{
+        fetch("/news.json")
+        .then(res=> res.json())
+        .then(json =>{
+            setData(json);
+            setIsLoading(false)
+        })
+
+    }, []);
+
+    if(isLoading){
+        return <span className="loading loading-infinity loading-xl"></span>
+    }
+
+    console.log(data)
     return (
         <div>
             <h1>midPoint - {id}</h1>
