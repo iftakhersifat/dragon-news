@@ -49,7 +49,7 @@ const Center = () => {
       <h1 className='text-xl font-bold mb-4'>Total News Found: {news.length}</h1>
       <div>
         {
-            news.map(rawNews =><NewsCard key={rawNews.id} rawNews={rawNews}></NewsCard>)
+            news.map(news =><NewsCard key={news.id} news={news}></NewsCard>)
         }
       </div>
     </div>

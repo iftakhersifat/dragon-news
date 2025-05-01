@@ -2,7 +2,7 @@ import React from 'react';
 
 const RightSide = () => {
     return (
-        <div>
+        <div className='ml-6'>
             <h1 className='text-xl font-bold mb-4'>Login With</h1>
             {/* Google */}
             <button className="btn bg-white text-black border-[#e5e5e5] mb-4 w-full">
