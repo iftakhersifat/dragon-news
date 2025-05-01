@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import NewsCard from './NewsCard';
 
 const Center = () => {
     const {id} = useParams();
@@ -46,7 +47,11 @@ const Center = () => {
     return (
         <div>
       <h1 className='text-xl font-bold mb-4'>Total News Found: {news.length}</h1>
-      
+      <div>
+        {
+            news.map(rawNews =><NewsCard key={rawNews.id} rawNews={rawNews}></NewsCard>)
+        }
+      </div>
     </div>
   );
 };
