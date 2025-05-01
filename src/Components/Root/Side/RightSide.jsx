@@ -36,7 +36,15 @@ const RightSide = () => {
                 <div className='rounded-full border-1 border-gray-100 bg-[#F3F3F3] p-2'>
                 <img src={"/assets/instagram.png"} width='12' alt=""  />
                 </div>
-                <h1 className='text-gray-500'>Twitter</h1>
+                <h1 className='text-gray-500'>Instagram</h1>
+            </div>
+
+            {/* img cards */}
+            <div className='bg-[#F3F3F3] p-3 mb-4'>
+            <h1 className='text-xl font-bold mb-4'>Q-Zone</h1>
+            <img src={'/assets/swimming.png'} className='mb-4' alt="" />
+            <img src={'/assets/class.png'} className='mb-4' alt="" />
+            <img src={'/assets/playground.png'} className='mb-4' alt="" />
             </div>
 
             {/* bg */}
