@@ -8,8 +8,10 @@ import {
 } from "react-router";
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Home.jsx';
-import Center from './Components/Root/Side/Center.jsx';
+// import Center from './Components/Root/Side/Center.jsx';
 import NotFound from './Components/NotFound/NotFound.jsx';
+import Center from './Components/Root/Side/Center.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,14 @@ const router = createBrowserRouter([
         // loader: ()=>fetch("/categories.json"),
        Component: Home},
        {
-        path: "leftSide/:id",
-        Component: Center
+        path: "center/:id",
+        element: <Home></Home>,
+        children: [
+          {
+            index: true,
+            Component: Center
+          }
+        ]
        },
     ]
     
