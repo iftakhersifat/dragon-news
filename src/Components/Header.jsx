@@ -12,7 +12,7 @@ const Header = () => {
                 <p className='text-gray-500 font-semibold text-xl'>Journalism Without Fear or Favour</p>
 
                 {/* date-fns */}
-                <p className='text-gray-500'>{format(new Date(), "EEEE, MMMM, yyyy")}</p>
+                <p className='text-gray-500'>{format(new Date(), "EEEE, PPP")}</p>
             </div>
         </div>
 

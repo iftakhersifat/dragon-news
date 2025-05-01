@@ -32,12 +32,15 @@ const RightSide = () => {
                 <h1 className='text-gray-500'>Twitter</h1>
             </div>
             {/* instagram */}
-            <div className='flex items-center gap-4 p-4 border-1 border-gray-100'>
+            <div className='flex items-center gap-4 p-4 border-1 border-gray-100 mb-4'>
                 <div className='rounded-full border-1 border-gray-100 bg-[#F3F3F3] p-2'>
                 <img src={"/assets/instagram.png"} width='12' alt=""  />
                 </div>
                 <h1 className='text-gray-500'>Twitter</h1>
             </div>
+
+            {/* bg */}
+            <img src={'/assets/bg.png'} width='400' alt="" />
 
 
 
