@@ -1,9 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link,useNavigate } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
 
 const Login = () => {
     const {signIn} = use(AuthContext);
+
+    // loadPage
+    const navigate =useNavigate();
 
     const handelLogin=(e)=>{
         e.preventDefault();
@@ -19,6 +22,11 @@ const Login = () => {
         .catch(error=>{
             console.log(error);
         })
+    }
+
+    // loadPage
+    const loadPage=()=>{
+        navigate("/")
     }
 
     return (
@@ -37,7 +45,7 @@ const Login = () => {
           <label className="label font-bold">Password</label>
           <input type="password" className="input w-full" name='password' placeholder="Enter your password" />
 
-          <button className="btn bg-[#403F3F] text-white mt-4 mb-4">Login</button>
+          <button onClick={loadPage} className="btn bg-[#403F3F] text-white mt-4 mb-4">Login</button>
           <div className="link link-hover text-center">Don’t Have An Account ? <Link to="/auth/register"> <span className='text-red-500 underline'>Register</span></Link></div>
           
         </form>
