@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../Firebase/AuthProvider';
 
 const Login = () => {
+    const {signIn} = use(AuthContext);
 
     const handelLogin=(e)=>{
         e.preventDefault();
         const email =e.target.email.value;
         const password =e.target.password.value;
         console.log(email, password);
+
+        // sign in
+        signIn(email, password)
+        .then(()=>{
+            alert("Successfully Login");
+        })
+        .catch(error=>{
+            console.log(error);
+        })
     }
 
     return (
