@@ -11,6 +11,9 @@ import Home from './Components/Home.jsx';
 // import Center from './Components/Root/Side/Center.jsx';
 import NotFound from './Components/NotFound/NotFound.jsx';
 import Center from './Components/Root/Side/Center.jsx';
+import AuthLayout from './Components/AuthLayout/AuthLayout.jsx';
+import Login from './Components/AuthLayout/Login.jsx';
+import Register from './Components/AuthLayout/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +32,23 @@ const router = createBrowserRouter([
             index: true,
             Component: Center
           }
+        ]
+       },
+
+      //  authLayout
+
+       {
+        path: "auth",
+        Component: AuthLayout,
+        children: [
+          {
+            path: "/auth/login",
+            Component: Login
+          },
+          {
+            path: "/auth/register",
+            Component: Register
+          },
         ]
        },
     ]
