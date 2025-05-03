@@ -2,13 +2,23 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Register = () => {
+
+    const handelRegister=(e)=>{
+        e.preventDefault();
+        const name =e.target.name.value;
+        const url =e.target.url.value;
+        const email =e.target.email.value;
+        const password =e.target.password.value;
+        console.log(name, url, email, password);
+    }
+
     return (
         <div className="hero mt-10">
 
     <div className="shadow-2xl ">
       <div className="card-body border-2 border-amber-300 w-[700px] h-[640px]">
         
-        <form className="fieldset p-6 space-y-3">
+        <form onSubmit={handelRegister} className="fieldset p-6 space-y-3">
         <h1 className='font-bold text-2xl text-center mb-4'>Register your account</h1>
         <div className='border mb-4 text-[#E7E7E7]'></div>
 
