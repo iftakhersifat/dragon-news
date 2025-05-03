@@ -2,6 +2,7 @@ import React from 'react';
 import { FaEye, FaShareAlt } from 'react-icons/fa';
 import { MdOutlineBookmarkBorder } from 'react-icons/md';
 import { FaStar } from 'react-icons/fa6';
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
   const {
@@ -12,6 +13,7 @@ const NewsCard = ({ news }) => {
     rating,
     total_view,
     published_date,
+    id
   } = news;
 
   const truncateText = (text, limit = 250) => {
@@ -38,9 +40,10 @@ const NewsCard = ({ news }) => {
       <div className="p-4">
         <h2 className="font-bold text-lg mb-3">{title}</h2>
         <img src={image_url} alt={title} className="w-full rounded mb-3" />
-        <p className="text-gray-600">
+        
+        <Link to={`/dragon/${id}`} className="text-gray-600">
           {truncateText(details)} <span className="text-orange-500 font-semibold">Read More</span>
-        </p>
+        </Link>
       </div>
 
       <div className="flex items-center justify-between px-4 pb-4 text-gray-600 border-t pt-3">
