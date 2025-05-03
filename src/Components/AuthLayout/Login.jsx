@@ -13,10 +13,10 @@ const Login = () => {
         <div className='border mb-4 text-[#E7E7E7]'></div>
 
           <label className="label font-bold">Email address</label>
-          <input type="email" className="input w-full" placeholder="Enter your email address" />
+          <input type="email" className="input w-full" name='email' placeholder="Enter your email address" />
 
           <label className="label font-bold">Password</label>
-          <input type="password" className="input w-full" placeholder="Enter your password" />
+          <input type="password" className="input w-full" name='password' placeholder="Enter your password" />
 
           <button className="btn bg-[#403F3F] text-white mt-4 mb-4">Login</button>
           <div className="link link-hover text-center">Don’t Have An Account ? <Link to="/auth/register"> <span className='text-red-500 underline'>Register</span></Link></div>

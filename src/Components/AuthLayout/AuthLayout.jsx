@@ -1,10 +1,11 @@
 import React from 'react';
 import Login from './Login';
+import { Outlet } from 'react-router';
 
 const AuthLayout = () => {
     return (
         <div>
-            <Login></Login>
+            <Outlet></Outlet>
         </div>
     );
 };
