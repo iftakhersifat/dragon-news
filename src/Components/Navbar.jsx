@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from './Firebase/AuthProvider';
 
 const Navbar = () => {
+    const {user} = use(AuthContext);
     return (
         <div className='flex justify-between mt-10 container mx-auto'>
-            <div></div>
+            <div>{user && user.email}</div>
             <div>
                 <nav className="space-x-4">
                     <NavLink className={({isActive})=>isActive ? "text-blue-500 underline" : "text-gray-500"} 

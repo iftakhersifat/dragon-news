@@ -14,6 +14,7 @@ import Center from './Components/Root/Side/Center.jsx';
 import AuthLayout from './Components/AuthLayout/AuthLayout.jsx';
 import Login from './Components/AuthLayout/Login.jsx';
 import Register from './Components/AuthLayout/Register.jsx';
+import AuthProvider from './Components/Firebase/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
