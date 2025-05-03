@@ -7,13 +7,16 @@ const Home = () => {
     return (
         <div className='container mx-auto'>
             <div className='mt-10 flex'>
-            <aside className="w-[20%]">
+
+            <aside className="w-[20%] sticky top-0 h-fit">
                 <LeftSide></LeftSide>
             </aside>
+
             <aside className="w-[60%]">
                 <Center></Center>
             </aside>
-            <aside className="w-[20%]">
+
+            <aside className="w-[20%] sticky top-0 h-fit">
                 <RightSide></RightSide>
             </aside>
         </div>
