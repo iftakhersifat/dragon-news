@@ -2,13 +2,21 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Login = () => {
+
+    const handelLogin=(e)=>{
+        e.preventDefault();
+        const email =e.target.email.value;
+        const password =e.target.password.value;
+        console.log(email, password);
+    }
+
     return (
         <div className="hero mt-10">
 
     <div className="shadow-2xl ">
       <div className="card-body border-2 border-amber-300 w-[700px] h-[500px]">
         
-        <form className="fieldset p-6 space-y-4">
+        <form onSubmit={handelLogin} className="fieldset p-6 space-y-4">
         <h1 className='font-bold text-2xl text-center mb-4'>Login your account</h1>
         <div className='border mb-4 text-[#E7E7E7]'></div>
 
