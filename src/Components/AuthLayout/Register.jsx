@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
 
 const Register = () => {
-    const {createUser} = use(AuthContext);
+    const {createUser, setUser} = use(AuthContext);
 
     const handelRegister=(e)=>{
         e.preventDefault();
@@ -16,10 +16,10 @@ const Register = () => {
         // createUser function call
         createUser(email, password)
         .then(result=>{
-            console.log(result.user)
+            setUser(result.user);
         })
         .catch(error=>{
-            console.log(error)
+            alert(error.message);
         })
     }
 
