@@ -22,8 +22,8 @@ const NewsCard = ({ news }) => {
   };
 
   return (
-    <div className="card bg-base-100 shadow-md mb-6 border">
-      <div className="flex items-center justify-between p-4 border-b">
+    <div className="card  shadow-lg mb-6">
+      <div className="flex items-center justify-between p-4 bg-gray-200">
         <div className="flex items-center gap-3">
           <img src={author?.img} alt={author?.name} className="w-10 h-10 rounded-full object-cover" />
           <div>
@@ -46,7 +46,9 @@ const NewsCard = ({ news }) => {
         </Link>
       </div>
 
-      <div className="flex items-center justify-between px-4 pb-4 text-gray-600 border-t pt-3">
+      <div className='border-t border-gray-200 mx-4'></div>
+
+      <div className="flex items-center justify-between px-4 pb-4 text-gray-600 pt-3">
         <div className="flex items-center gap-1 text-orange-500">
           {[...Array(5)].map((_, i) => (
             <FaStar key={i} />
