@@ -12,6 +12,9 @@ const Register = () => {
 
     // password checked
     const check = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    // show password
+    const [showPassword, setShowPassword] = useState(false);
         
 
     const handelRegister=(e)=>{
@@ -77,7 +80,13 @@ const Register = () => {
           <input type="email" className="input w-full" name='email' placeholder="Enter your email address" />
 
           <label className="label font-bold">Password</label>
-          <input type="password" className="input w-full" name='password' placeholder="Enter your password" />
+          <div className='relative'>
+          <input type={showPassword ? "text" : "password"} 
+                 className="input w-full" 
+                 name='password' 
+                 placeholder="Enter your password" />
+          <button onClick={()=>setShowPassword(!showPassword)} className='absolute top-3 right-4'>Eye</button>
+          </div>
 
           {
             error && <p className='text-red-500'>{error}</p>
