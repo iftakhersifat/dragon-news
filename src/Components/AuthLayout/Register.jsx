@@ -23,10 +23,18 @@ const Register = () => {
         const terms =e.target.terms.checked;
         console.log(name, url, email, password, terms);
 
+        // password checked
         if(check.test(password) != true){
           setError("at least one lowercase letter,  at least one  uppercase letter,  at least one digit (0–9), at least one special character, minimum 8 characters")
           return;
       }
+
+      // terms checked
+      if(!terms){
+        setError("please accept our terms and conditions")
+        return;
+    }
+
 
 
         // createUser function call
@@ -53,7 +61,7 @@ const Register = () => {
         <div className="hero mt-10">
 
     <div className="shadow-2xl ">
-      <div className="card-body border-2 border-amber-300 w-[700px] h-[640px]">
+      <div className="card-body border-2 border-amber-300 w-[700px] h-[680px]">
         
         <form onSubmit={handelRegister} className="fieldset p-6 space-y-3">
         <h1 className='font-bold text-2xl text-center mb-4'>Register your account</h1>
