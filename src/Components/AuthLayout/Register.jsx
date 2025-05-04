@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
+import { FaEye } from 'react-icons/fa';
 
 const Register = () => {
     const {createUser, setUser, UpdateUser} = use(AuthContext);
@@ -85,7 +86,7 @@ const Register = () => {
                  className="input w-full" 
                  name='password' 
                  placeholder="Enter your password" />
-          <button onClick={()=>setShowPassword(!showPassword)} className='absolute top-3 right-4'>Eye</button>
+          <button onClick={()=>setShowPassword(!showPassword)} className='absolute top-3 right-4'><FaEye size={14}></FaEye></button>
           </div>
 
           {
