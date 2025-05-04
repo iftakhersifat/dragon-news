@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
 
@@ -7,13 +7,27 @@ const Register = () => {
 
     const navigate =useNavigate();
 
+    // error show
+    const [error, setError] =useState('');
+
+    // password checked
+    const check = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        
+
     const handelRegister=(e)=>{
         e.preventDefault();
         const name =e.target.name.value;
         const url =e.target.url.value;
         const email =e.target.email.value;
         const password =e.target.password.value;
-        console.log(name, url, email, password);
+        const terms =e.target.terms.checked;
+        console.log(name, url, email, password, terms);
+
+        if(check.test(password) != true){
+          setError("at least one lowercase letter,  at least one  uppercase letter,  at least one digit (0–9), at least one special character, minimum 8 characters")
+          return;
+      }
+
 
         // createUser function call
         createUser(email, password)
@@ -31,7 +45,7 @@ const Register = () => {
             
         })
         .catch(error=>{
-            alert(error.message);
+            setError(error.message);
         })
     }
 
@@ -57,9 +71,13 @@ const Register = () => {
           <label className="label font-bold">Password</label>
           <input type="password" className="input w-full" name='password' placeholder="Enter your password" />
 
+          {
+            error && <p className='text-red-500'>{error}</p>
+          }
+
             
          <label className="label">
-           <input type="checkbox" defaultChecked className="checkbox" />
+           <input type="checkbox" defaultChecked className="checkbox" name='terms' />
            Accept Term & Conditions
          </label>
 
