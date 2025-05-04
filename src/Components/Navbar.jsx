@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className='flex justify-between mt-10 container mx-auto'>
             <div>{user && user.email}</div>
             <div>
-                <nav className="space-x-4">
+                <nav className="space-x-4 ml-8">
                     <NavLink className={({isActive})=>isActive ? "text-blue-500 underline" : "text-gray-500"} 
                     to="/">Home</NavLink>
                     <NavLink className={({isActive})=>isActive ? "text-blue-500 underline" : "text-gray-500"} 

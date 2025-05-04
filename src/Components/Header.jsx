@@ -19,7 +19,7 @@ const Header = () => {
         <div className='flex items-center gap-4 mt-10 bg-[#F3F3F3] p-4'>
             <h1 className='btn bg-[#D72050] text-white'>Latest</h1>
         <Marquee pauseOnHover={true} speed={60}>
-            <p>The GroundTruth Project announces reorganization to more deeply focus on flagship programming</p>
+            <p><span className='font-bold'> La Liga : </span>  Barcelona secured a 2-1 victory over Real Valladolid. Fermin López scored a 9/10 performance, while Raphinha earned an 8.5/10 rating. The win keeps Barcelona in the title race. <span className='font-bold'> Serie A :</span> Napoli now need only seven points from their remaining three games to clinch the Serie A title, maintaining their advantage over Inter Milan. <span className='font-bold'> Premier League & English Football : </span> Premier League champions Liverpool face Chelsea today. Manager Arne Slot may rotate the squad, providing opportunities to fringe players as the team aims to surpass Manchester City's record for the largest title-winning margin. <span className='font-bold'> Bundesliga :</span> Bayern Munich's title celebrations are postponed after a draw with RB Leipzig. The Bundesliga title race remains open with a few games left. <span className='font-bold'> Transfer News :</span> Manchester United are reportedly making a move to sign Bayer Leverkusen defender Jonathan Tah, potentially outmaneuvering Barcelona, who were also interested in the player.  </p>
         </Marquee>
         </div>
 
