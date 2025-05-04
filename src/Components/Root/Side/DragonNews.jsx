@@ -6,7 +6,7 @@ import DragonDetailsNews from './DragonDetailsNews';
 const DragonNews = () => {
     const data = useLoaderData();
     const {id} =useParams();
-    console.log(data, id);
+    // console.log(data, id);
 
     const [news, setNews]= useState([]);
 

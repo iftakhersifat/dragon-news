@@ -15,6 +15,8 @@ import AuthLayout from './Components/AuthLayout/AuthLayout.jsx';
 import Login from './Components/AuthLayout/Login.jsx';
 import Register from './Components/AuthLayout/Register.jsx';
 import AuthProvider from './Components/Firebase/AuthProvider.jsx';
+import DragonDetailsNews from './Components/Root/Side/DragonDetailsNews.jsx';
+import PrivateRoute from './Components/Firebase/PrivateRoute.jsx';
 import DragonNews from './Components/Root/Side/DragonNews.jsx';
 
 
@@ -59,7 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/dragon/:id",
         loader: ()=>fetch("/news.json"),
-        Component: DragonNews,
+        element: 
+          <PrivateRoute>
+            <DragonNews></DragonNews>
+          </PrivateRoute>
       },
     ]
     
