@@ -25,7 +25,7 @@ const Categories = () => {
             <h1 className='text-xl font-bold mb-4'>All Category</h1>
             <div className='space-y-4 grid grid-cols-1'>
                 {
-                    categories.map(category => <NavLink key={category.id} className="btn w-[150px] border-none bg-white" to={`/center/${category.id}`}>{category.name}
+                    categories.map(category => <NavLink key={category.id} className={({isActive})=>isActive ? "btn w-[150px] border-none bg-gray-200 text-black" : "btn w-[150px] border-none bg-white"} to={`/center/${category.id}`}>{category.name}
                     </NavLink>)
                 }
             </div>
