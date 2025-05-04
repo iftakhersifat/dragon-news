@@ -32,7 +32,7 @@ const Navbar = () => {
             </div>
 
             <div className='flex gap-4'>
-                <img className='w-12 rounded-full' src={`${user ? user.photoURL : "/assets/user.png"}`} alt="user" />
+                <img className='w-10 rounded-full' src={`${user ? user.photoURL : "/assets/user.png"}`} alt="user" />
                 {
                     user ? <button onClick={handelLogOut} className='bg-[#403F3F] text-white btn px-6'>Log Out</button> : <Link to="/auth/login" className='bg-[#403F3F] text-white btn px-6'>Login</Link>
                 }

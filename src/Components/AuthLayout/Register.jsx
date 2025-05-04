@@ -1,9 +1,11 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
 
 const Register = () => {
     const {createUser, setUser, UpdateUser} = use(AuthContext);
+
+    const navigate =useNavigate();
 
     const handelRegister=(e)=>{
         e.preventDefault();
@@ -25,6 +27,7 @@ const Register = () => {
             console.log(error);
             setUser(user);
           });
+          navigate("/");
             
         })
         .catch(error=>{
