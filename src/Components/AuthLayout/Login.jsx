@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link,useNavigate } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
 
@@ -7,6 +7,9 @@ const Login = () => {
 
     // loadPage
     const navigate =useNavigate();
+
+    // error set
+    const [error, setError] = useState('');
 
     const handelLogin=(e)=>{
         e.preventDefault();
@@ -18,16 +21,14 @@ const Login = () => {
         signIn(email, password)
         .then(()=>{
             alert("Successfully Login");
+            navigate("/")
         })
         .catch(error=>{
-            console.log(error);
+            setError(error.message);
         })
     }
 
-    // loadPage
-    const loadPage=()=>{
-        navigate("/")
-    }
+    
 
     return (
         <div className="hero mt-10">
@@ -45,7 +46,11 @@ const Login = () => {
           <label className="label font-bold">Password</label>
           <input type="password" className="input w-full" name='password' placeholder="Enter your password" />
 
-          <button onClick={loadPage} className="btn bg-[#403F3F] text-white mt-4 mb-4">Login</button>
+          {
+            error && <p className='text-red-500'>{error}</p>
+          }
+
+          <button type='submit'  className="btn bg-[#403F3F] text-white mt-4 mb-4">Login</button>
           <div className="link link-hover text-center">Don’t Have An Account ? <Link to="/auth/register"> <span className='text-red-500 underline'>Register</span></Link></div>
           
         </form>
