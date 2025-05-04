@@ -72,20 +72,20 @@ const Register = () => {
         <div className='border mb-4 text-[#E7E7E7]'></div>
 
           <label className="label font-bold">Your Name</label>
-          <input type="text" className="input w-full" name='name' placeholder="Enter your name" />
+          <input type="text" className="input w-full" name='name' placeholder="Enter your name" required />
 
           <label className="label font-bold">Photo URl</label>
-          <input type="text" className="input w-full" name='url' placeholder="Enter your photo url" />
+          <input type="text" className="input w-full" name='url' placeholder="Enter your photo url" required />
 
           <label className="label font-bold">Email address</label>
-          <input type="email" className="input w-full" name='email' placeholder="Enter your email address" />
+          <input type="email" className="input w-full" name='email' placeholder="Enter your email address" required />
 
           <label className="label font-bold">Password</label>
           <div className='relative'>
           <input type={showPassword ? "text" : "password"} 
                  className="input w-full" 
                  name='password' 
-                 placeholder="Enter your password" />
+                 placeholder="Enter your password" required />
           <button onClick={()=>setShowPassword(!showPassword)} className='absolute top-3 right-4'>
             {
               showPassword ? <FaEyeSlash size={14}></FaEyeSlash> : <FaEye size={14}></FaEye>
