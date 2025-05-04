@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { AuthContext } from '../Firebase/AuthProvider';
 
 const Register = () => {
-    const {createUser, setUser} = use(AuthContext);
+    const {createUser, setUser, UpdateUser} = use(AuthContext);
 
     const handelRegister=(e)=>{
         e.preventDefault();
@@ -16,7 +16,16 @@ const Register = () => {
         // createUser function call
         createUser(email, password)
         .then(result=>{
-            setUser(result.user);
+          const user = result.user;
+          UpdateUser({displayName: name, photoURL: url})
+          .then(()=>{
+            setUser({...user, displayName: name, photoURL: url});
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
+            
         })
         .catch(error=>{
             alert(error.message);
@@ -37,7 +46,7 @@ const Register = () => {
           <input type="text" className="input w-full" name='name' placeholder="Enter your name" />
 
           <label className="label font-bold">Photo URl</label>
-          <input type="text" className="input w-full" name='url' placeholder="Enter your password" />
+          <input type="text" className="input w-full" name='url' placeholder="Enter your photo url" />
 
           <label className="label font-bold">Email address</label>
           <input type="email" className="input w-full" name='email' placeholder="Enter your email address" />
